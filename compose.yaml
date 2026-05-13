@@ -1,0 +1,8 @@
+services:
+  webserver:
+    image: docker.io/library/caddy:alpine
+    volumes:
+      - ./.output/public:/srv
+      - ./caddy-conf:/etc/caddy
+    ports:
+      - 29144:80
