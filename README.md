@@ -73,3 +73,20 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Container version
+
+Included in the repo are a `Containerfile`, `container.yaml` as well as `caddy-conf/`.
+The `Containerfile` allows to build a nodejs container with the content from `package.json` installed.
+
+### Building the website
+
+You can build the container with `podman -t sinistre-et-sombre:dev .`.
+You can run the builder container with `podman run --rm -ti -v .:/app localhost/sinistre-et-sombre:dev sh`.
+Once in the container, `npx nuxi generate` with build the static site in `.output/public/`.
+
+### Deploying the website
+
+This is where the `compose.yaml` and `caddy-conf` comes in play. Once the files are built, simply running `podman compose up -d` should make the site available on http://localhost:29144/ !
+
+⚠️ For an unknown reason, Caddy fails on rebuild (it might be that `npx nux generate` deletes and recreates `.output/public`). This means that after each rebuild, `podman compose restart` must be run.
