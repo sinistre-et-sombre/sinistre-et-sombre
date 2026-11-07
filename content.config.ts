@@ -2,10 +2,10 @@ import { defineContentConfig, defineCollection } from '@nuxt/content'
 
 export default defineContentConfig({
   collections: {
-    cotv: defineCollection({
+    content: defineCollection({
       type: 'page',
       source: {
-        include: "cotv/**.md",
+        include: '**',
         prefix: '/'
       }
     })
