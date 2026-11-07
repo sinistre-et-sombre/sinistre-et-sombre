@@ -5,9 +5,9 @@
 name: Deploy Nuxt site to Pages
 
 on:
-  # Runs on pushes targeting the default branch, as well as the working branch for testing purposes
+  # Runs on pushes targeting the default branch
   push:
-    branches: ["main", "github-action"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
