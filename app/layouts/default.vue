@@ -34,7 +34,9 @@ const activeSection = computed(() => {
 <template>
   <div class="min-h-screen bg-sky-950">
     <header class="border-b">
-      <div class="flex md:items-center gap-6 px-6 py-4 flex-col md:flex-row">
+      <div
+        class="flex md:items-center gap-6 px-6 py-4 flex-col md:flex-row max-w-5xl mx-auto"
+      >
         <button
           type="button"
           class="flex flex-col gap-1.5 md:hidden"
@@ -63,18 +65,19 @@ const activeSection = computed(() => {
         </nav>
       </div>
     </header>
+    <div class="max-w-5xl mx-auto py-8">
+      <div class="flex flex-col md:flex-row">
+        <aside
+          v-if="activeSection"
+          class="border-b p-4 text-sm md:w-64 md:shrink-0 md:border-b-0 md:border-r text-white mr-4"
+        >
+          <TreeNode :item="activeSection" />
+        </aside>
 
-    <div class="flex flex-col md:flex-row">
-      <aside
-        v-if="activeSection"
-        class="border-b p-4 text-sm md:w-64 md:shrink-0 md:border-b-0 md:border-r text-white"
-      >
-        <TreeNode :item="activeSection" />
-      </aside>
-
-      <main class="flex-1">
-        <slot />
-      </main>
+        <main class="flex-1">
+          <slot />
+        </main>
+      </div>
     </div>
   </div>
 </template>
