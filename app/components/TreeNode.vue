@@ -23,7 +23,7 @@ const isOpen = ref(isCurrentRoute(props.item.path));
         <button
           v-if="children.length"
           type="button"
-          class="w-4 text-xs text-gray-500"
+          class="w-6 text-sm text-white border rounded border-white/25"
           :aria-label="isOpen ? 'Replier' : 'Déplier'"
           @click="isOpen = !isOpen"
         >
