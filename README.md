@@ -81,7 +81,7 @@ The `Containerfile` allows to build a nodejs container with the content from `pa
 
 ### Building the website
 
-You can build the container with `podman -t sinistre-et-sombre:dev .`.
+You can build the container with `podman build -t sinistre-et-sombre:dev .`.
 You can run the builder container with `podman run --rm -ti -v .:/app localhost/sinistre-et-sombre:dev sh`.
 Once in the container, `npx nuxi generate` with build the static site in `.output/public/`.
 
