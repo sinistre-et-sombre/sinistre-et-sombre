@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "BBB ReadMe";
+  src: url("../fonts/BBBReadMe-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Chomsky";
+  src: url("../fonts/Chomsky.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+h1,
+.prose :where(h1) {
+  font-family: "Chomsky", Georgia, serif;
+  font-weight: 400;
+}
