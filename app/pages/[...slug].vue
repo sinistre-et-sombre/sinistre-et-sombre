@@ -14,7 +14,7 @@ if (!page.value) {
 </script>
 
 <template>
-  <article class="prose dark:prose-invert">
+  <article class="prose prose-invert">
     <ContentRenderer v-if="page" :value="page" />
   </article>
 </template>
